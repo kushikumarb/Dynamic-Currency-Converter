@@ -14,14 +14,17 @@ A lightweight, responsive web application that provides real-time currency conve
 
 - **Frontend:** HTML5, CSS3 (Flexbox/Grid)
 - **Scripting:** JavaScript (ES6+)
-- **API Integration:** Fetch API / Async-Await
+- **API Integration:**
+  - **Currency Data:** [Fawaz Ahmed's Currency API](https://github.com/fawazahmed0/currency-api) (via `cdn.jsdelivr.net`)
+  - **Flag Icons:** [FlagsAPI](https://flagsapi.com/)
 
 ## 📋 How It Works
 
-1. The user enters the desired amount to convert.
-2. The user selects the **From** (source) and **To** (target) currencies from the dropdown menus.
-3. The JavaScript script listens for the submission event, triggers an asynchronous `fetch()` request to the exchange rate API, and parses the JSON response.
-4. The DOM is dynamically updated with the converted amount and the corresponding country flags.
+1. **Initialization:** On page load, the app populates the currency dropdowns using a global `countryList` object, default-selecting `USD` for the source and `INR` for the target.
+2. **Event Listeners:** The script monitors dropdown changes to trigger flag updates and catches button clicks to calculate rates.
+3. **API Integration:** - A `fetch()` request is sent to `${BASE_URL}/${fromCurr}.json`.
+   - The JSON response is parsed dynamically using the key format: `data[fromCurrency][toCurrency]`.
+4. **DOM Updates:** The app computes the `finalAmt` and replaces the text inside the `.msg` container.
 
 ## 🔧 Installation & Setup
 
@@ -29,12 +32,26 @@ To run this project locally, follow these simple steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/currency-converter.git](https://github.com/your-username/currency-converter.git)
-   ```
+   git clone [https://github.com/kushikumarb/Dynamic-Currency-Converter.git](https://github.com/kushikumarb/Dynamic-Currency-Converter.git)
 2. **Navigate to the project directory**
    ```bash
    cd currency-converter
-   ```
 3. **Open the project**
    Simply double-click the index.html file to open it in your default browser, or use a development server extension like Live Server in VS Code.
 ## 📸 ScreenShots
+Here are the visual outcomes of the project showing the interface and real-time updates:
+
+| Desktop Interface | Mobile / Responsive View | Dropdown / Flag Interaction |
+|---|---|---|
+| ![Desktop View](results/Screenshot-1.png) | ![Mobile View](results/Screenshot-2.png) | ![Feature View](results/Screenshot-3.png) |
+
+## 🎯 Key Learning Outcomes
+
+- **Asynchronous JavaScript:** Mastery of `async/await` syntax and the `fetch()` API to manage live network requests.
+- **Data Parsing:** Dynamically pulling multi-layered JSON keys using template literals like `data[fromCurr][toCurr]`.
+- **DOM Manipulation:** Utilizing clean logic to read user inputs, create HTML elements on the fly, and modify properties instantly.
+- **Error Minimization:** Sanitizing user inputs directly within the script to handle blank or negative numbers by defaulting back to `1`.
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
