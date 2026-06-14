@@ -14,7 +14,7 @@ for ( let select of dropdowns){
         newOption.value = currcode;
         if (select.name === "from" && currcode === "USD"){
             newOption.selected = "selected";
-        } else if (select.name === "to" && currcode === "INR"){
+        } else if (select.name === "to" && currcdd ode === "INR"){
             newOption.selected = "selected";
         }
         select.append(newOption);
