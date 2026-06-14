@@ -43,7 +43,7 @@ Here are the visual outcomes of the project showing the interface and real-time 
 
 | Desktop Interface | Mobile / Responsive View | Dropdown / Flag Interaction |
 |---|---|---|
-| ![Desktop View](Results/Screenshot-1.png) | ![Mobile View](Results/Screenshot-2.png) | ![Feature View](Results/Screenshot-3.png) |
+| ![Desktop View](Results/Screenshot-1.png) | ![Mobile View](Results/Screenshot-3.png) | ![Feature View](Results/Screenshot-2.png) |
 
 ## 🎯 Key Learning Outcomes
 
